@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Job Application Automator Pro",
+  "version": "2.0",
+  "description": "Professional job application automation with enterprise ATS support",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*.linkedin.com/*",
+    "*://*.dice.com/*",
+    "*://*.greenhouse.io/*",
+    "*://*.lever.co/*",
+    "*://*.myworkdayjobs.com/*",
+    "*://*.taleo.net/*",
+    "*://*.smartrecruiters.com/*",
+    "*://*.icims.com/*",
+    "*://*.jobvite.com/*",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["encryption.js", "content.js"],
+      "css": ["styles.css"],
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Job Application Automator Pro"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js", "iframe-handler.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
