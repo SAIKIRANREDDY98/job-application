@@ -1,0 +1,384 @@
+/* General Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  width: 400px; /* Increased width slightly */
+  font-size: 14px;
+  color: #333;
+  background-color: #f4f6f8;
+}
+
+.extension-container {
+  padding: 15px;
+}
+
+.extension-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.extension-header h1 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #555;
+}
+.status-indicator .status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2ecc71; /* Green for ready */
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.status-indicator .status-dot.error { background-color: #e74c3c; }
+.status-indicator .status-dot.processing { background-color: #f39c12; }
+
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.tab-btn {
+  padding: 10px 15px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px; /* Align with parent border */
+}
+.tab-btn.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+  font-weight: 600;
+}
+.tab-btn:hover {
+  color: #2980b9;
+}
+
+.tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+}
+
+/* Forms */
+.form-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.form-section h3 {
+  font-size: 15px;
+  color: #3498db;
+  margin-top: 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.form-row input {
+  flex: 1;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+input:focus, textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Buttons */
+.primary-btn, .secondary-btn, .save-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+.primary-btn {
+  background-color: #3498db;
+  color: white;
+}
+.primary-btn:hover { background-color: #2980b9; }
+.primary-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+  background-color: #ecf0f1;
+  color: #34495e;
+  border: 1px solid #bdc3c7;
+}
+.secondary-btn:hover { background-color: #dadedf; }
+
+.small-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* File Uploads */
+.file-upload-container {
+  margin-bottom: 10px;
+}
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.file-upload-label:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+.file-upload-label input[type="file"] {
+  display: none;
+}
+.file-upload-label .file-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+.file-status {
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+.file-status.success { color: #27ae60; }
+.file-status.error { color: #c0392b; }
+
+
+/* Auto Fill Tab */
+.platform-detection {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.platform-detection h3 { margin-top: 0; color: #3498db; font-size: 15px; margin-bottom: 10px;}
+.detection-result-content p, .detection-result-content ul {font-size: 13px; margin-bottom: 5px;}
+.detection-result-content ul { padding-left: 20px; }
+.detection-result-content li { margin-bottom: 3px; }
+
+.fill-options {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.fill-options h3 { margin-top: 0; color: #3498db; font-size: 15px; margin-bottom: 10px;}
+.option-checkbox {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.option-checkbox input { margin-right: 8px; }
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.action-buttons button { flex: 1; }
+
+.fill-progress {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  font-size: 13px;
+}
+#fill-progress-text.status-idle { color: #555; }
+#fill-progress-text.status-processing { color: #cb7A00; font-weight: 500; }
+#fill-progress-text.status-success { color: #27ae60; font-weight: 500; }
+#fill-progress-text.status-error { color: #c0392b; font-weight: 500; }
+
+
+/* History Tab */
+.history-list ul {
+  list-style: none;
+  padding: 0;
+  max-height: 250px; /* Scrollable history */
+  overflow-y: auto;
+}
+.history-list li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+.history-list li:last-child {
+  border-bottom: none;
+}
+.history-list li strong {
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 2px;
+}
+.history-list li a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 11px;
+  display: block;
+  word-break: break-all;
+}
+.history-list li a:hover { text-decoration: underline; }
+.history-list li em {
+    font-size: 11px;
+    color: #7f8c8d;
+    display: block;
+    margin-top: 3px;
+}
+.history-list p { /* For "No applications" message */
+    padding: 10px;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+
+/* Settings Tab */
+#settings-tab p, #settings-tab ul {
+    font-size: 13px;
+    color: #555;
+}
+#settings-tab ul {
+    padding-left: 20px;
+}
+
+
+/* Legal Disclaimer */
+.legal-disclaimer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Darker overlay */
+  display: flex; /* Hidden by default, shown by JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.disclaimer-content-wrapper {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  max-width: 550px; /* Wider for more text */
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.disclaimer-content-wrapper h4 {
+  color: #e74c3c; /* Warning color */
+  font-size: 18px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.disclaimer-text-content p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 13px;
+  text-align: left;
+}
+.disclaimer-text-content strong {
+    color: #d35400;
+}
+.disclaimer-checkbox-label {
+  display: flex; /* Changed to flex for better alignment */
+  align-items: flex-start; /* Align items to the start */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.disclaimer-checkbox-label input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 3px; /* Adjust vertical alignment */
+  flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+#disclaimer-ok-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* Messages Area */
+#messages-container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10005;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.message {
+    padding: 10px 15px;
+    border-radius: 4px;
+    color: white;
+    font-size: 13px;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    min-width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.message.info { background-color: #3498db; }
+.message.success { background-color: #2ecc71; }
+.message.error { background-color: #e74c3c; }
+
+/* Utility */
+.error-message { color: #c0392b; font-weight: 500; }
